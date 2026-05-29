@@ -14,13 +14,14 @@ public class LowestCommonAncestor {
             return null;
         }
 
-        TreeNode left = lowestCommonAncestor(root.left, p, q);
-        TreeNode right = lowestCommonAncestor(root.right, p, q);
-
         // 先考虑自身，如果自身是节点之一，直接返回
+        // 如果自身是节点之一，就不用向下遍历了，因为，如果另一个节点在子树上。仍然返回当前自身
         if (root == p || root == q) {
             return root;
         }
+
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
 
         // 再考虑子节点：
         // 如果左右节点都不为空，返回父节点
