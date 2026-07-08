@@ -1,6 +1,6 @@
 package org.example.practice;
 
-public class SortList_ {
+public class _SortList {
 
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {
