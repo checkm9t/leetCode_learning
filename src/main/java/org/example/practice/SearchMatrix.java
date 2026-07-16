@@ -4,7 +4,7 @@ public class SearchMatrix {
 
     public boolean searchMatrix(int[][] matrix, int target) {
         int x = 0;
-        int y = matrix.length - 1;
+        int y = matrix[0].length - 1;
 
         while (x < matrix.length && y >= 0) {
             if (matrix[x][y] == target) {
