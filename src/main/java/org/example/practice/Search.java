@@ -12,14 +12,14 @@ public class Search {
             if (target == nums[mid]) {
                 return mid;
             }
-            if (nums[mid] >= nums[0]) {
-                if (target < nums[mid] && target >= nums[0]) {
+            if (nums[mid] > nums[n-1]) {
+                if (target < nums[mid] && target > nums[n-1]) {
                     right = mid - 1;
                 } else {
                     left = mid + 1;
                 }
-            } else if (nums[mid] < nums[0]) {
-                if (target > nums[mid] && target < nums[0]) {
+            } else if (nums[mid] <= nums[n-1]) {
+                if (target > nums[mid] && target <= nums[n-1]) {
                     left = mid + 1;
                 } else {
                     right = mid - 1;
