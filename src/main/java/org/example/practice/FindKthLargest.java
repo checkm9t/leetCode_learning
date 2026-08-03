@@ -1,16 +1,12 @@
 package org.example.practice;
 
 public class FindKthLargest {
-
     public int findKthLargest(int[] nums, int k) {
-        /*
-        quickSelect(nums, 0, nums.length - 1, k);
-        return nums[k - 1];
-         */
         int heapSize = nums.length;
         buildMaxHeap(nums, heapSize);
+
         for (int i = 0; i < k - 1; i++) {
-            swap(nums, 0, heapSize-1);
+            swap(nums, 0, heapSize - 1);
             heapSize--;
             heapify(nums, 0, heapSize);
         }
@@ -18,6 +14,7 @@ public class FindKthLargest {
         return nums[0];
     }
 
+    // heapSize 一定要透传下来
     public void buildMaxHeap(int[] nums, int heapSize) {
         // 从第一个非叶子节点开始
         for (int i = heapSize / 2 - 1; i >= 0; i--) {
@@ -25,6 +22,7 @@ public class FindKthLargest {
         }
     }
 
+    // 这里记住要传index
     public void heapify(int[] nums, int index, int heapSize) {
         int left, right, largest;
         for (int i = index; i < heapSize;) {
@@ -38,10 +36,20 @@ public class FindKthLargest {
                 largest = right;
             }
             // 这个很重要
-            if (i == largest) return;
+            if (i == largest) {
+                return;
+            }
             swap(nums, i, largest);
+
+            // 这里保持向下迭代
             i = largest;
         }
+    }
+
+    public void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
     }
 
     /**
@@ -74,9 +82,5 @@ public class FindKthLargest {
         }
     }
 
-    public void swap(int[] nums, int left, int right) {
-        int temp = nums[left];
-        nums[left] = nums[right];
-        nums[right] = temp;
-    }
+
 }
