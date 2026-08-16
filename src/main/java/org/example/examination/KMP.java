@@ -24,6 +24,7 @@ public class KMP {
                 // 递归寻找能够匹配的最小的前缀
                 // 如果递归到0，就停止
                 while (j > 0 && p[i] != p[j + 1]) {
+                    // next[j] 一定已经被填充过
                     j = next[j];
                 }
 
