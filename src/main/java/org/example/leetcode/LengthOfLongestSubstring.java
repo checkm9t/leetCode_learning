@@ -5,6 +5,8 @@ public class LengthOfLongestSubstring {
     public int lengthOfLongestSubstring(String s) {
         int left = 0;
         int right = 0;
+
+        // 如果不去分大小写的话，写128
         int[] counts = new int[128];
         int res = 0;
 

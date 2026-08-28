@@ -1,6 +1,7 @@
 package org.example.leetcode;
 
-
+// k个一组反转链表
+// leetcode 25
 public class _ReverseKGroup {
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode dummy = new ListNode();

@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// 字母异位词分类
+// leetcode 49
 public class GroupAnagrams {
 
     public List<List<String>> groupAnagrams(String[] strs) {

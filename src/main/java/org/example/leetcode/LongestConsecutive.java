@@ -3,6 +3,8 @@ package org.example.leetcode;
 import java.util.HashSet;
 import java.util.Set;
 
+// 最长连续序列
+// leetcode 128
 public class LongestConsecutive {
     public int longestConsecutive(int[] nums) {
         Set<Integer> numSet = new HashSet<>();
