@@ -1,6 +1,9 @@
 package org.example.leetcode;
 
 public class MinWindow {
+
+    // 最小覆盖子串
+    // leetcode 76
     public String minWindow(String s, String t) {
         int[] sCnt = new int[128];
         int[] tCnt = new int[128];
@@ -26,10 +29,13 @@ public class MinWindow {
             right++;
 
             while (check(sCnt, tCnt)) {
+                // 先记录结果
                 if (resL == -1 || (resR - resL) > (right - left)) {
                     resR = right;
                     resL = left;
                 }
+
+                // 再左移窗口
                 sCnt[s.charAt(left) - 'A']--;
                 left++;
             }

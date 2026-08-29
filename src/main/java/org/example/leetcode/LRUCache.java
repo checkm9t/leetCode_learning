@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class LRUCache {
     ListNode head;
+
+    // 尾节点，需要用来移除最后的元素
     ListNode tail;
     int capacity;
     Map<Integer, ListNode> map;
@@ -73,6 +75,8 @@ public class LRUCache {
     }
 
     public void removeTail(){
+
+        // 注意：要移除map里的节点
         map.remove(tail.prev.key);
         tail.prev.prev.next = tail;
         tail.prev = tail.prev.prev;

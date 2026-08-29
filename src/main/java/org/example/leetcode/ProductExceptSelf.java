@@ -1,5 +1,7 @@
 package org.example.leetcode;
 
+// 除了自身以外的乘积
+// leetcode 238
 public class ProductExceptSelf {
 
     public int[] productExceptSelf(int[] nums) {

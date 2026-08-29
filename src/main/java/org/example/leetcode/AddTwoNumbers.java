@@ -26,7 +26,7 @@ public class AddTwoNumbers {
             cur = cur.next;
         }
 
-        // 这个要记住
+        // 这个要记住，结尾需要把最后的carry加上
         if (carry > 0) {
             cur.next = new ListNode(carry);
         }

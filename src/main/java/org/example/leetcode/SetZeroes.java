@@ -1,5 +1,7 @@
 package org.example.leetcode;
 
+// 矩阵置零
+// leetcode 73
 public class SetZeroes {
     public void setZeroes(int[][] matrix) {
         int n = matrix.length;
@@ -11,6 +13,9 @@ public class SetZeroes {
             if (matrix[i][0] == 0) {
                 col0 = 0;
             }
+
+            // j从1开始，因为如果j=0时，就刚好记录了这一行为0，不需要标记了，不需要处理
+            // 如果j从0开始的话，会影响matrix[0][0]的结果判断
             for (int j = 1; j < m; j++) {
                 if (matrix[i][j] == 0) {
                     matrix[i][0] = 0;

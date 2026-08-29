@@ -1,5 +1,7 @@
 package org.example.leetcode;
 
+// 二叉搜索树中第k小的元素
+// leetcode 230
 public class KthSmallest {
 
     public static int cnt;
@@ -12,16 +14,21 @@ public class KthSmallest {
     }
 
     public void kthSmallest(TreeNode root) {
+
+        // 这里需要判断是否已经找到对应的值
         if (root == null || cnt == 0) {
             return;
         }
 
         kthSmallest(root.left);
+
+        // 在中序节点进行减操作
         cnt--;
         if (cnt == 0) {
             res = root.val;
             return;
         }
+
         kthSmallest(root.right);
 
     }

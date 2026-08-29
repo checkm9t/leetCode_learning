@@ -2,6 +2,8 @@ package org.example.leetcode;
 
 import java.util.Stack;
 
+// 接雨水
+// leetcode 42
 public class Trap {
     public int trap(int[] height) {
         Stack<Integer> stack = new Stack<>();

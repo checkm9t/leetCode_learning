@@ -1,6 +1,7 @@
 package org.example.leetcode;
 
-
+// 最大子数组和
+// leetcode 53
 public class MaxSubArray {
 
     /**

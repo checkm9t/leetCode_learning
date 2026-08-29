@@ -1,7 +1,7 @@
 package org.example.leetcode;
 
-
-// leetcode
+// 随机链表的复制
+// leetcode 138
 public class _CopyRandomList {
 
     public Node copyRandomList(Node head) {
@@ -9,6 +9,7 @@ public class _CopyRandomList {
             return null;
         }
 
+        // 把拷贝节点插在原节点的后面
         Node cur = head;
         while (cur != null) {
             Node cpNode = new Node(cur.val);
@@ -17,6 +18,7 @@ public class _CopyRandomList {
             cur = cur.next.next;
         }
 
+        // 设置拷贝节点的random指针
         cur = head;
         while (cur != null) {
             if (cur.random != null) {
@@ -27,6 +29,8 @@ public class _CopyRandomList {
 
         cur = head;
         Node copyHead = head.next;
+
+        // 拆分链表
         while (cur != null) {
             Node postNode = cur.next.next;
             if (postNode != null) {

@@ -3,6 +3,8 @@ package org.example.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
+// 合并k个升序链表
+// leetcode 23
 public class MergeKLists {
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists.length < 1) {
