@@ -8,6 +8,8 @@ public class DetectCycle {
 
     public ListNode detectCycle(ListNode head) {
         ListNode slow = head;
+
+        // 注意这里是head，而不是head.next
         ListNode fast = head;
 
         // 这里不要用slow!=fast来判断，校验很麻烦

@@ -5,6 +5,8 @@ import org.example.common.ListNode;
 import java.util.ArrayList;
 import java.util.List;
 
+// 回文链表
+// leetcode 234
 public class isPalindrome {
 
     public boolean isPalindrome(ListNode head) {

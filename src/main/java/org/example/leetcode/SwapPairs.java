@@ -1,11 +1,14 @@
 package org.example.leetcode;
 
+// 两两交换链表中的节点
+// leetcode 24
 public class SwapPairs {
     public ListNode swapPairs(ListNode head) {
         ListNode dummy = new ListNode();
         dummy.next = head;
         ListNode tmp = dummy;
 
+        // 用tmp来做基准线
         while (tmp.next != null && tmp.next.next != null) {
             ListNode p1 = tmp.next;
             ListNode p2 = tmp.next.next;

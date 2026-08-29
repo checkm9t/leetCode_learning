@@ -3,8 +3,12 @@ package org.example.leetcode;
 import java.util.Arrays;
 import java.util.Stack;
 
+// 合并区间
+// leetcode 56
 public class Merge {
     public int[][] merge(int[][] intervals) {
+
+        // 用栈来解决
         Stack<int[]> stack = new Stack<>();
         if(intervals.length<=0){
             return null;
@@ -27,6 +31,9 @@ public class Merge {
                 stack.push(cur);
             }
         }
+
+        // 注意：这里把栈转换成数组的方法要记住
+        // 并且传入的初始化数组第一个参数为0
         return stack.toArray(new int[0][2]);
 
     }

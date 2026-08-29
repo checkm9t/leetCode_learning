@@ -1,5 +1,7 @@
 package org.example.leetcode;
 
+// 缺失的第一个正数
+// leetcode 41
 public class FirstMissingPositive {
 
     public int firstMissingPositive(int[] nums) {
@@ -10,9 +12,7 @@ public class FirstMissingPositive {
             //while (nums[i] > 0 && nums[i] <= n && nums[i] - 1 != i) {
             // 应该判断的是交换的值有没有变，如果没有变则不用交换。这样才能覆盖到循环的情况
             while (nums[i] > 0 && nums[i] <= n && nums[nums[i] - 1] != nums[i]) {
-                int temp = nums[nums[i] - 1];
-                nums[nums[i] - 1] = nums[i];
-                nums[i] = temp;
+                swap(nums,i,nums[i]-1);
             }
         }
 
@@ -22,5 +22,11 @@ public class FirstMissingPositive {
             }
         }
         return n + 1;
+    }
+
+    public void swap(int[] nums,int left,int right){
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
     }
 }
