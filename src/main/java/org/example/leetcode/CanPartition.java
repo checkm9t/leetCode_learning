@@ -1,5 +1,7 @@
 package org.example.leetcode;
 
+// 分割等和子集
+// leetcode 416
 public class CanPartition {
 
     public boolean canPartition(int[] nums) {

@@ -7,6 +7,7 @@ public class CoinChange {
     // 完全背包
     public int coinChange(int[] coins, int amount) {
         int[] dp = new int[amount + 1];
+
         // amount+1 是不可能达到的最大值，又不会像最大int容易越界
         Arrays.fill(dp, amount + 1);
         dp[0] = 0;

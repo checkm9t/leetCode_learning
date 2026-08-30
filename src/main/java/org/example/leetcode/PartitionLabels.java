@@ -7,6 +7,7 @@ public class PartitionLabels {
     public List<Integer> partitionLabels(String s) {
         int[] last = new int[26];
         for (int i = 0; i < s.length(); i++) {
+            // 记录每一个字符最后出现的位置
             last[s.charAt(i) - 'a'] = i;
         }
 
@@ -14,7 +15,9 @@ public class PartitionLabels {
         int end = 0;
         List<Integer> res = new ArrayList<>();
         for (int i = 0; i < s.length(); i++) {
+            // 更新最远的位置
             end = Math.max(end, last[s.charAt(i) - 'a']);
+            // 如果到达了最远的位置，进行切割
             if (i == end) {
                 res.add(i - left);
                 left = i;

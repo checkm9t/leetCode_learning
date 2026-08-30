@@ -16,6 +16,8 @@ public class CombinationSum {
         return res;
     }
 
+    // 因为是组合数，所以还是要按序遍历，防止重复
+    // index来保证顺序，已经遍历过的不能再重新遍历
     public void dfs(int[] candidates, List<Integer> tmp, int sum, int target, int index) {
         if (sum > target || index >= candidates.length) {
             return;

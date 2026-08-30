@@ -9,13 +9,17 @@ public class _OrangesRotting {
 
         int n = grid.length;
         int m = grid[0].length;
+
         // 初始设置为-1，否则会多算1层
         int res = 0;
+
+        // 记录新鲜的橘子数量，防止没有腐烂的橘子
         int fresh = 0;
         Queue<int[]> que = new LinkedList<>();
         boolean[][] visited = new boolean[n][m];
         int[][] dir = new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 
+        // 收集所有的橘子加入队列
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (grid[i][j] == 2) {
@@ -30,6 +34,8 @@ public class _OrangesRotting {
         while (!que.isEmpty()) {
             int size = que.size();
             res++;
+
+            //队列里每一个都要遍历，但是要检查是否添加过下一个位置
             for (int i = 0; i < size; i++) {
                 int[] cur = que.poll();
                 for (int k = 0; k < 4; k++) {

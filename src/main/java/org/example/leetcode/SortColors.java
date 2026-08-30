@@ -11,7 +11,7 @@ public class SortColors {
 
             // i<=p2 防止越界，并且 p2 小于i的部分不用关注
             // p2 交换过来的位置是有可能是2的，所以循环
-            while (i <= p2 && nums[i] == 2) {
+            while (p2 >= i && nums[i] == 2) {
                 swap(nums, i, p2);
                 p2--;
             }

@@ -21,6 +21,8 @@ public class Subsets {
 
         tmp.add(nums[index]);
         dfs(nums, index + 1, tmp);
+
+        // 要注意这个，去除的是索引
         tmp.remove(tmp.size() - 1);
         dfs(nums, index + 1, tmp);
     }

@@ -3,12 +3,18 @@ package org.example.leetcode;
 import java.util.Arrays;
 import java.util.Stack;
 
+// 柱状图中最大的矩阵
+// leetcode 84
 public class LargestRectangleArea {
 
+    // 找左右延伸的最大值
+    // 用单调栈找
     public int largestRectangleArea(int[] heights) {
         int n = heights.length;
         Stack<Integer> stack = new Stack<>();
+        // 左边比i小的第一个索引
         int[] left = new int[n];
+        // 右边比i小的第一个索引
         int[] right = new int[n];
 
         // 因为可能单调栈没有处理完，剩余的右边界并没有设置

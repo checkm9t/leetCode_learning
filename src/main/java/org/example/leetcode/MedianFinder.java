@@ -5,7 +5,6 @@ import java.util.PriorityQueue;
 public class MedianFinder {
 
 
-
     PriorityQueue<Integer> max;
     PriorityQueue<Integer> min;
 
@@ -23,11 +22,14 @@ public class MedianFinder {
     public void addNum(int num) {
         if (max.isEmpty() || num <= max.peek()) {
             max.add(num);
+
+            // 这个校验是两边都要各自校验
             if (max.size() > min.size() + 1) {
                 min.add(max.poll());
             }
         } else {
             min.add(num);
+
             if (min.size() > max.size()) {
                 max.add(min.poll());
             }

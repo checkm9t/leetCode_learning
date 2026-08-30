@@ -8,6 +8,10 @@ public class _DecodeString {
         Stack<Integer> numStack = new Stack<>();
         Stack<String> strStack = new Stack<>();
         StringBuilder tmpNum = new StringBuilder();
+
+        // 这个有多层作用
+        // 在遇到 [ 的时候做临时入栈
+        // ** 在遇到 ] 的时候需要进行复制，然后与栈顶进行拼接
         StringBuilder tmpStr = new StringBuilder();
 
         for (char c : s.toCharArray()) {
@@ -17,6 +21,7 @@ public class _DecodeString {
                     numStack.push(Integer.valueOf(tmpNum.toString()));
                     strStack.push(tmpStr.toString());
 
+                    // 记住这个清空 StringBuilder 的方法
                     tmpNum.setLength(0);
                     tmpStr.setLength(0);
                 }

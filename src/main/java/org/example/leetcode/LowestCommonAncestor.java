@@ -25,6 +25,7 @@ public class LowestCommonAncestor {
 
         // 再考虑子节点：
         // 如果左右节点都不为空，返回父节点
+        // 这里用!=null进行判断，而不是用p，q
         if (left != null && right != null) {
             return root;
         }

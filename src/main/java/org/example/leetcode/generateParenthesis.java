@@ -28,9 +28,11 @@ public class generateParenthesis {
             return;
         }
 
-        tmp.append('(');
-        dfs(n, left + 1, right, tmp);
-        tmp.deleteCharAt(tmp.length() - 1);
+        if (left < n) {
+            tmp.append('(');
+            dfs(n, left + 1, right, tmp);
+            tmp.deleteCharAt(tmp.length() - 1);
+        }
 
         tmp.append(')');
         dfs(n, left, right + 1, tmp);

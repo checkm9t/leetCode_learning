@@ -18,7 +18,7 @@ public class _SearchInsert {
             }
         }
 
-        //因为最后一定在left和right之间，插入是在后面大的那个插入
-        return Math.max(left, right);
+        // 因为left一定大于right
+        return left;
     }
 }

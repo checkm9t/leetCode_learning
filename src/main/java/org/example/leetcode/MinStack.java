@@ -13,6 +13,8 @@ class MinStack {
 
     public void push(int value) {
         numStack.push(value);
+
+        // 记得要判空
         if (resStack.isEmpty() || value <= resStack.peek()) {
             resStack.push(value);
         }

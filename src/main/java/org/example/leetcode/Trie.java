@@ -5,12 +5,18 @@ class Trie {
     public Trie[] children;
     public Boolean isEnd;
 
+    // 记住这里初始化需要创建孩子
     public Trie() {
         children = new Trie[26];
+
+        // 这里记住把isEnd给初始化一下
+        isEnd = false;
     }
 
     public void insert(String word) {
         Trie cur = this;
+
+        // 遍历插入的word
         for (char c : word.toCharArray()) {
             if (cur.children[c - 'a'] != null) {
                 // 这里需要尤其注意，应该是cur.children，而不是children

@@ -11,7 +11,6 @@ public class NextPermutation {
 
         // 如果i小于0，表示已经是最大的排列了，直接reverse是最小的排列
         if (i >= 0) {
-
             // 不能直接把j设置成i+1，因为i+1以及之前虽然是降序，但是i+1不一定是大于i的最小数字
             int j = nums.length - 1;
             while (j >= 0 && nums[j] <= nums[i]) {

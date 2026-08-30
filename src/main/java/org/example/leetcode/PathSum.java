@@ -22,6 +22,8 @@ public class PathSum {
         return res;
     }
 
+    // 注意：这里需要用前序遍历
+    // 因为需要先收获路径上的和
     public void dfs(TreeNode root, Long sum, int targetSum) {
         if (root == null) {
             return;
@@ -29,6 +31,7 @@ public class PathSum {
 
         // 1.计算和
         sum += root.val;
+
         // 2.计算结果
         res += map.getOrDefault(sum - targetSum, 0);
 

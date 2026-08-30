@@ -13,6 +13,8 @@ public class DailyTemperatures {
             while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
                 res[stack.peek()] = i - stack.pop();
             }
+
+            // 记住还要加进去
             stack.push(i);
         }
 

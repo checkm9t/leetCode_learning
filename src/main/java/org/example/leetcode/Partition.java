@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// 分割回文串
+// leetcode 131
 public class Partition {
 
     public List<List<String>> res;
