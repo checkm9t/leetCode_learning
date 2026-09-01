@@ -3,6 +3,8 @@ package org.example.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
+// 划分字母区间
+// leetcode 45
 public class PartitionLabels {
     public List<Integer> partitionLabels(String s) {
         int[] last = new int[26];
@@ -11,6 +13,7 @@ public class PartitionLabels {
             last[s.charAt(i) - 'a'] = i;
         }
 
+        // left 用来记录上一个区间的末尾位置
         int left = -1;
         int end = 0;
         List<Integer> res = new ArrayList<>();

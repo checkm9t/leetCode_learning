@@ -41,6 +41,7 @@ public class Partition {
             res.add(new ArrayList<>(tmp));
         }
 
+        // 从当前位置往后找
         for (int j = index; j < s.length(); j++) {
             if (dp[index][j]) {
                 tmp.add(s.substring(index, j + 1));

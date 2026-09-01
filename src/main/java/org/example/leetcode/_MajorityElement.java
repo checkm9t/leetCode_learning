@@ -1,5 +1,7 @@
 package org.example.leetcode;
 
+// 多数元素
+// leetcode 169
 public class _MajorityElement {
 
     // 思路就是，大多数元素，减到最后一定是大于1的

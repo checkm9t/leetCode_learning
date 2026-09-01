@@ -18,6 +18,7 @@ public class MaxPathSum {
             return 0;
         }
 
+        // 注意：这里需要和 0 进行对比
         int leftMax = Math.max(maxPath(node.left), 0);
         int rightMax = Math.max(maxPath(node.right), 0);
 

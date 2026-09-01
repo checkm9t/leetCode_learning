@@ -17,7 +17,7 @@ public class _DecodeString {
         for (char c : s.toCharArray()) {
             if (c == '[') {
                 if (!tmpNum.isEmpty()) {
-                    // 有栈对齐的问题num不为空，str即使为空字符串也要加进去
+                    // 注意很重要：有栈对齐的问题num不为空，str即使为空字符串也要加进去
                     numStack.push(Integer.valueOf(tmpNum.toString()));
                     strStack.push(tmpStr.toString());
 

@@ -22,7 +22,7 @@ public class KthSmallest {
 
         kthSmallest(root.left);
 
-        // 在中序节点进行减操作
+        // 在 中序节点 进行减操作
         cnt--;
         if (cnt == 0) {
             res = root.val;

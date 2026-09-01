@@ -1,5 +1,7 @@
 package org.example.leetcode;
 
+// 最长公共子序列
+// leetcode 1143
 public class LongestCommonSubsequence {
     public int longestCommonSubsequence(String text1, String text2) {
         int n = text1.length();

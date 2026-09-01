@@ -27,6 +27,7 @@ public class LargestRectangleArea {
                 right[tmp] = i;
             }
             // 现在栈顶元素一定小于等于i的元素
+            // 如果是空的话，左边界是-1
             left[i] = stack.isEmpty() ? -1 : stack.peek();
             stack.push(i);
         }
