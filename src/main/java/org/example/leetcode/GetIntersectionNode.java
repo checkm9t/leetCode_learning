@@ -15,6 +15,7 @@ public class GetIntersectionNode {
 
             // 注意，从null到下一个节点也算一步。移动之后就不能next了
             // 否则会错过相交节点，没有判断想等就跳过了
+            // 需要给机会让这两个节点可以同时等于null，这两个节点如果都等于null，那么就退出了
             if (p1 == null) {
                 p1 = headB;
             } else {

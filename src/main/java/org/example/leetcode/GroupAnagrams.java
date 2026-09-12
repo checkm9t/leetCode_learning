@@ -33,6 +33,7 @@ public class GroupAnagrams {
         }
 
         List<List<String>> res = new ArrayList<>();
+        // 注意这个方法：需要有 map.entrySet()
         for (Map.Entry<String, List<String>> entry : map.entrySet()) {
             res.add(entry.getValue());
         }
