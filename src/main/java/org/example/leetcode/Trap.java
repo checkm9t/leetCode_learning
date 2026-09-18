@@ -18,6 +18,8 @@ public class Trap {
                 }
 
                 int left = stack.peek();
+
+                // 在前两个相等时，的high就是0，进入下一轮
                 int high = Math.min(height[i], height[left]) - height[mid];
                 int wide = i - left - 1;
                 res += wide * high;

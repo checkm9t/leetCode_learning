@@ -11,6 +11,8 @@ public class LongestCommonSubsequence {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= m; j++) {
                 if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
+                    // dp[i][j-1] <= dp[i-1][j-1]+1
+                    // 天然小于等于，所以不用判断了
                     dp[i][j] = dp[i - 1][j - 1] + 1;
                 } else {
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);

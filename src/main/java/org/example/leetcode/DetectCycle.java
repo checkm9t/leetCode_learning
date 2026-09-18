@@ -20,6 +20,7 @@ public class DetectCycle {
             slow = slow.next;
             fast = fast.next.next;
 
+            // 需要后置判断，因为一开始相等
             if(slow == fast){
                 break;
             }
