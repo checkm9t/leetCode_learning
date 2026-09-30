@@ -1,5 +1,7 @@
 package org.example.examination.bytedance;
 
+// 不同的子序列
+// leetcode 115
 public class NumDistinct {
 
     public int numDistinct(String s, String t) {

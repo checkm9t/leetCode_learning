@@ -82,6 +82,7 @@ public class LRUTTLCache {
             ListNode newNode = new ListNode(key, value, ttlMs);
             map.put(key, newNode);
             insertToHead(newNode);
+
             // 超过容量：优先尝试删掉过期节点；没有过期节点，再删LRU尾节点
             if (map.size() > capacity) {
 

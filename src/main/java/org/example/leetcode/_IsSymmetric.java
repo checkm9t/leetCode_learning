@@ -10,6 +10,7 @@ public class _IsSymmetric {
         return dfs(root.left, root.right);
     }
 
+    // 这里入参是两个
     public boolean dfs(TreeNode left, TreeNode right) {
         if (left == null && right == null) {
             return true;

@@ -29,6 +29,8 @@ public class _FindMedianSortedArrays {
             i = (left + right) / 2;
             j = leftHalf - i;
 
+            // 注意：num1是n数组的左值
+            // num2是m数组的右值，所以取得的边界判断不一样
             int num1 = i == 0 ? Integer.MIN_VALUE : nums1[i - 1];
             int num2 = j == n2 ? Integer.MAX_VALUE : nums2[j];
 

@@ -3,6 +3,9 @@ package org.example.leetcode;
 public class _SortList {
 
     public ListNode sortList(ListNode head) {
+
+        // 这个返回条件需要注意
+        // head.next == null这个条件不能漏
         if (head == null || head.next == null) {
             return head;
         }

@@ -3,6 +3,8 @@ package org.example.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
+// leetcode 118
+// 杨辉三角
 public class _Generate {
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> res = new ArrayList<>();

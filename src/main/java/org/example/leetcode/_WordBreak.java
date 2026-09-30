@@ -9,6 +9,7 @@ public class _WordBreak {
     public boolean wordBreak(String s, List<String> wordDict) {
         int n = s.length();
         Set<String> dict = new HashSet<>(wordDict);
+        // dp[i]:到charAt(i-1)是否可以被分开
         boolean[] dp = new boolean[n + 1];
         dp[0] = true;
 

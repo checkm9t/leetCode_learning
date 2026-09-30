@@ -19,7 +19,7 @@ public class CombinationSum {
     // 因为是组合数，所以还是要按序遍历，防止重复
     // index来保证顺序，已经遍历过的不能再重新遍历
     public void dfs(int[] candidates, List<Integer> tmp, int sum, int target, int index) {
-        if (sum > target || index >= candidates.length) {
+        if (index >= candidates.length) {
             return;
         }
         if (sum == target) {
@@ -27,10 +27,15 @@ public class CombinationSum {
         }
 
         for (int i = index; i < candidates.length; i++) {
-            tmp.add(candidates[i]);
+
             // 注意这里入参是i而不是i+1
-            dfs(candidates, tmp, sum + candidates[i], target, i);
-            tmp.remove((int)(tmp.size() - 1));
+            if (sum + candidates[i] <= target) {
+                tmp.add(candidates[i]);
+                dfs(candidates, tmp, sum + candidates[i], target, i);
+                tmp.remove((int) (tmp.size() - 1));
+
+            }
+
         }
     }
 }

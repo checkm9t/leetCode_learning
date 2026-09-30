@@ -13,13 +13,13 @@ public class MaxLessN {
         String[][] dp = new String[k + 1][2];
 
         // 初始状态：空前缀与 n 的空前缀相等
-        dp[0][0] = null;
+        dp[0][0] = "";
         dp[0][1] = "";
 
         // 避免修改调用者传入的数组
-        Arrays.sort(digits, (a, b) ->
-                Integer.compare(Integer.parseInt(b), Integer.parseInt(a))
-        );
+        Arrays.sort(digits, (a, b) -> {
+            return Integer.valueOf(b) - Integer.valueOf(a);
+        });
 
         String maxDigit = digits[0];
 
@@ -52,14 +52,15 @@ public class MaxLessN {
              * 后面直接补允许使用的最大数字
              */
             if (dp[i][0] == null) {
-                if (dp[i - 1][0] != null) {
-                    dp[i][0] = dp[i - 1][0] + maxDigit;
-                } else if (i == 1) {
+                // 记得要先判断这个，否则，下面逻辑可能错误地走进
+                if (i == 1) {
                     /*
                      * 无法构造和 n 等长的数，尝试构造少一位的数。
                      * 空字符串相当于先不占用第一位。
                      */
                     dp[i][0] = "";
+                }else if (dp[i - 1][0] != null) {
+                    dp[i][0] = dp[i - 1][0] + maxDigit;
                 }
             }
         }

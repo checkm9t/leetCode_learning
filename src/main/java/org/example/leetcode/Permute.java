@@ -17,7 +17,6 @@ public class Permute {
         dfs(nums, 0, new ArrayList<>());
 
         return res;
-
     }
 
     public void dfs(int[] nums, int cnt, List<Integer> tmp) {

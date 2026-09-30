@@ -18,7 +18,7 @@ public class DeleteNode {
         }
         // 找到要删除的节点 root
         else {
-            // case1:叶子节点
+            // case1:只有主节点，意味着删除叶子节点,返回null
             if (root.left == null && root.right == null) {
                 return null;
             }
@@ -36,7 +36,7 @@ public class DeleteNode {
                 TreeNode minNode = findMin(root.right);
                 // 替换值
                 root.val = minNode.val;
-                // 在右子树删除这个最小节点
+                // 在右子树删除这个最小节点,注意：这个传入值是才查出来的值
                 root.right = deleteNode(root.right, minNode.val);
             }
         }
