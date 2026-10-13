@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+// leetcode 347
+// 前k个高频元素
 public class TopKFrequent {
 
 

@@ -3,6 +3,8 @@ package org.example.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
+// leetcode 39
+// 组合总和
 public class CombinationSum {
     public List<List<Integer>> res;
 

@@ -2,6 +2,7 @@ package org.example.leetcode;
 
 import java.util.Stack;
 
+
 public class _DecodeString {
 
     public String decodeString(String s) {

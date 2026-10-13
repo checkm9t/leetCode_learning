@@ -4,7 +4,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
+// 单词拆分
+// leetcode 139
 public class _WordBreak {
     public boolean wordBreak(String s, List<String> wordDict) {
         int n = s.length();

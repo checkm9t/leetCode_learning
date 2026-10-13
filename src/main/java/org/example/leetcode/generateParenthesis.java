@@ -3,6 +3,8 @@ package org.example.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
+// leetcode 22
+// 括号生成
 public class generateParenthesis {
 
     List<String> res;
@@ -17,26 +19,27 @@ public class generateParenthesis {
     }
 
     public void dfs(int n, int left, int right, StringBuilder tmp) {
-        int l = tmp.length();
         if (right > left) {
             return;
         }
-        if (l >= n * 2) {
-            if (left == right) {
-                res.add(tmp.toString());
-            }
+        if (left == n && right == n) {
+            res.add(tmp.toString());
             return;
         }
 
+        // 加左括号
         if (left < n) {
             tmp.append('(');
             dfs(n, left + 1, right, tmp);
             tmp.deleteCharAt(tmp.length() - 1);
         }
 
-        tmp.append(')');
-        dfs(n, left, right + 1, tmp);
-        tmp.deleteCharAt(tmp.length() - 1);
+        // 加右括号
+        if(right<left){
+            tmp.append(')');
+            dfs(n, left, right + 1, tmp);
+            tmp.deleteCharAt(tmp.length() - 1);
+        }
 
     }
 
