@@ -5,7 +5,7 @@ import java.util.List;
 
 // leetcode 22
 // 括号生成
-public class generateParenthesis {
+public class GenerateParenthesis {
 
     List<String> res;
 
